@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Слайдер туров</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="fixed-header">
+    <div class="logo">EcoTravel</div>
+    <nav>
+      <a href="#" onclick="navigateTo('index1.html')">Главная</a>
+      <a href="#" onclick="navigateTo('slider.html')">Слайдер</a>
+      <a href="#" onclick="navigateTo('about.html')">О нас</a>
+    </nav>
+  </header>
+
+  <main class="main-content fade-in">
+    <h1 class="centered">Фотогалерея приключений</h1>
+
+    <div class="slider-container">
+      <div class="slider">
+        <img class="slide active" src="слайд1.jpg" alt="Кемпинг у озера" />
+        <img class="slide" src="слайд2.jpg" alt="Экотропа в лесу" />
+        <img class="slide" src="слайд3.jpg" alt="Рафтинг на реке" />
+        <img class="slide" src="слайд4.jpg" alt="Восхождение на гору" />
+        <img class="slide" src="слайд5.jpg" alt="Наблюдение за птицами" />
+      </div>
+      <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
+      <button class="slider-btn next" onclick="moveSlide(1)">›</button>
+    </div>
+
+    <section class="mission">
+      <h2 class="centered">Почему мы любим эти места</h2>
+      <div class="text-content">
+        <p>Каждое фото — это реальный момент из наших туров. Мы не используем стоковые изображения.</p>
+        <p>Мы выбираем маршруты, где <span class="highlight">природа остаётся нетронутой</span>, а люди — её гостями.</p>
+        <p>Фотографии снимаются с заботой: без беспокойства животных, без выхода за пределы троп.</p>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="#" class="prev" onclick="navigateTo('index1.html')">Главная</a>
+      <a href="#" class="next" onclick="navigateTo('about.html')">О нас</a>
+    </div>
+  </main>
+
+  <script src="new.js"></script>
+</body>
+</html>

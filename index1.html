@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Эко-туризм</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="fixed-header">
+    <div class="logo">EcoTravel</div>
+    <nav>
+      <a href="#" onclick="navigateTo('index1.html')">Главная</a>
+      <a href="#" onclick="navigateTo('slider.html')">Слайдер</a>
+      <a href="#" onclick="navigateTo('about.html')">О нас</a>
+    </nav>
+  </header>
+
+  <main class="main-content fade-in">
+    <!-- Заголовок по центру -->
+    <h1 style="text-align: center;">Откройте мир экотуризма</h1>
+
+    <!-- Карточки активностей -->
+    <div class="cards">
+      <div class="card">
+        <img src="фото4.png" alt="Экотропы" />
+        <h3>Экотропы</h3>
+        <p>Прогулки по заповедникам с обучением экологии и уважению к природе.</p>
+        <button onclick="showInfo('Экотропы')">Узнать больше</button>
+      </div>
+
+      <div class="card">
+        <img src="фото6.jpg" alt="Кемпинг" />
+        <h3>Кемпинг</h3>
+        <p>Ночёвки в палатках, костёр, звёзды и тишина — без вреда природе.</p>
+        <button onclick="showInfo('Кемпинг')">Узнать больше</button>
+      </div>
+
+      <div class="card">
+        <img src="фото7.jpg" alt="Рафтинг" />
+        <h3>Рафтинг</h3>
+        <p>Активный отдых на реках с инструктором и экологическим инструктажом.</p>
+        <button onclick="showInfo('Рафтинг')">Узнать больше</button>
+      </div>
+
+      <div class="card">
+        <img src="фото8.jpg" alt="Восхождение" />
+        <h3>Восхождения</h3>
+        <p>Поднимитесь к вершине и почувствуйте силу природы.</p>
+        <button onclick="showInfo('Восхождения')">Узнать больше</button>
+      </div>
+
+      <div class="card">
+        <img src="фото9.jpg" alt="Бёрдвотчинг" />
+        <h3>Бёрдвотчинг</h3>
+        <p>Тихое наблюдение за птицами в их естественной среде обитания.</p>
+        <button onclick="showInfo('Бёрдвотчинг')">Узнать больше</button>
+      </div>
+
+      <div class="card">
+        <img src="фото5.jpeg" alt="Экоферма" />
+        <h3>Экофермы</h3>
+        <p>Жизнь по законам природы: сбор урожая, уход за животными, натуральные продукты.</p>
+        <button onclick="showInfo('Экофермы')">Узнать больше</button>
+      </div>
+    </div>
+
+    <!-- Вертикальные карточки: советы -->
+    <section class="vertical-cards">
+      <div style="width: 100%; max-width: 800px; margin: 0 auto; padding: 0 1rem; box-sizing: border-box;">
+        <h2 style="text-align: center; font-size: 2rem; color: #2e7d32;">
+          Как путешествовать экологично?
+        </h2>
+      </div>
+      <div class="card">
+        <img src="фото1.jpg" alt="Многоразовая бутылка" />
+        <h3>Берите с собой многоразовую бутылку</h3>
+        <p>Снижайте использование пластика — наполняйте воду из природных источников (с фильтром).</p>
+      </div>
+
+      <div class="card">
+        <img src="фото2.jpg" alt="Сбор мусора" />
+        <h3>Забирайте мусор с собой</h3>
+        <p>Если видите мусор — соберите. Даже чужой. Природа скажет вам спасибо.</p>
+      </div>
+
+      <div class="card">
+        <img src="фото3.jpg" alt="Солнечная панель" />
+        <h3>Используйте солнечные зарядки</h3>
+        <p>Заряжайте гаджеты от солнца — это экологично и удобно в походах.</p>
+      </div>
+    </section>
+
+    <!-- Миссия -->
+    <section class="mission">
+      <h2 class="centered">Наша миссия</h2>
+      <div class="mission-content">
+        <p>Мы верим, что туризм может быть не только источником вдохновения, но и силой для защиты природы.</p>
+        <p>Каждый наш маршрут разработан с учётом <span class="highlight-strong">минимального воздействия на экосистемы</span>.</p>
+        <p>Мы обучаем туристов принципам <span class="highlight-strong">Leave No Trace</span> и сотрудничаем с заповедниками.</p>
+      </div>
+    </section>
+
+    <!-- Блок "Leave No Trace" — раскрывающийся под кнопкой -->
+    <div style="text-align: center; margin: 2rem 0;" id="leaveNoTraceContainer">
+      <button class="primary-btn" onclick="toggleLeaveNoTrace()">Что значит «Leave No Trace»?</button>
+
+      <!-- Скрытый блок с информацией, появляется под кнопкой -->
+      <div id="leaveNoTraceModal" style="display: none; margin-top: 1rem; padding: 1.5rem; background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 12px; max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #2e7d32; margin-top: 0;">«Leave No Trace» — Не оставляй следов</h2>
+        <p><strong>Это принцип экологического поведения на природе</strong>, направленный на минимизацию воздействия человека на окружающую среду во время походов, кемпинга и других активностей на свежем воздухе. Основная идея — уходить из природного места так, будто тебя там вообще не было.</p>
+        
+        <h3 style="color: #1b5e20;">Основные правила:</h3>
+        <ul style="margin: 0.5rem 0 1rem 2rem;">
+          <li><strong>Планируйте заранее.</strong> Подготовка снижает риски и непредвиденное воздействие.</li>
+          <li><strong>Используйте уже затоптанные тропы и существующие стоянки.</strong> Это предотвращает распространение эрозии и разрушение нетронутой растительности.</li>
+          <li><strong>Храните еду и мусор так, чтобы не привлекать животных.</strong> Используйте медвежьи контейнеры или подвешивайте еду.</li>
+          <li><strong>Оставляйте всё, что находите.</strong> Не забирайте камни, растения, артефакты — пусть другие тоже могут ими полюбоваться.</li>
+          <li><strong>Убирайте за собой весь мусор.</strong> Вывозите всё, включая органические отходы (скорлупу от яиц, костные остатки).</li>
+          <li><strong>Соблюдайте правила костра.</strong> Лучше использовать газовую горелку. Если разводите костёр — только в разрешённых местах и на уже использованных костровищах.</li>
+          <li><strong>Уважайте дикую природу.</strong> Наблюдайте издалека, не кормите животных.</li>
+          <li><strong>Будьте вежливы с другими посетителями природы.</strong> Уважайте их право на тишину и уединение.</li>
+        </ul>
+        <p style="margin-bottom: 0;">Эти принципы помогают сохранить природу чистой и красивой для будущих поколений.</p>
+      </div>
+    </div>
+
+    <!-- Пример тура -->
+    <section class="example-tour">
+      <h2 class="centered-highlight">Пример тура: «Тайга и тишина»</h2>
+      <div class="tour-card">
+        <img src="тайга.jpg" alt="Тур в тайгу" />
+        <div class="tour-content">
+          <h3>7 дней в дикой природе</h3>
+          <p><strong>Место:</strong> Забайкалье, национальный парк «Алханай»</p>
+          <p><strong>Сезон:</strong> Июнь — Сентябрь</p>
+          <p><strong>Участники:</strong> До 8 человек</p>
+          <p>Погружение в природу без гаджетов, с ежедневными практиками осознанности и экологическими заданиями.</p>
+          <ul class="tour-list">
+            <li>Пешие переходы по экотропам с гидом-экологом</li>
+            <li>Кемпинг с биотуалетом и системой переработки отходов</li>
+            <li>Сбор ягод, чай из лесных трав, ужин у костра</li>
+            <li>Наблюдение за животными: соболи, олени, птицы</li>
+            <li>Эко-марафон: сбор мусора и посадка деревьев</li>
+          </ul>
+          <p><strong>Стоимость:</strong> от 25 000 ₽ с человека</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Навигация -->
+    <div class="page-nav">
+      <a href="#" class="prev" onclick="navigateTo('about.html')">‹ О нас</a>
+      <a href="#" class="next" onclick="navigateTo('slider.html')">Слайдер ›</a>
+    </div>
+  </main>
+
+  <!-- Скрипт для показа/скрытия информации о Leave No Trace -->
+  <script>
+    function toggleLeaveNoTrace() {
+      const modal = document.getElementById('leaveNoTraceModal');
+      if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'block';
+      } else {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+  <!-- Подключение основного JS-файла (если используется) -->
+  <script src="new.js"></script>
+</body>
+</html>
